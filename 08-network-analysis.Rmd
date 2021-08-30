@@ -250,7 +250,13 @@ map %>%
 ```
 
 #### Least Cost Corridors
-Although most network analysis techniques are suitable for vector data, raster layers can also be analyzed. One application of using network analysis with **raster data** is the finding of least cost corridors. While least cost paths helps to find linear paths along the network between two points, least cost corridors are based on the overlay of two *cost accumulative* rasters.
+Although most network analysis techniques are suitable for vector data, raster layers can also be analyzed. One application of using network analysis with **raster data** is the finding of least cost corridors. While least cost paths helps to find linear paths along the network between two points, least cost corridors helps to find a range of optimal paths based on the overlay of two *cost accumulative* raster layers. 
+
+``` {r, echo=FALSE, fig.cap="Process of finding cost corridors using raster data. Source: [@bpleweFileCostcorridorPng2020]", out.width="80%"}
+knitr::include_graphics("images/08-cost_rasters.png")
+```
+
+Such method is commonly used to study the dynamics of ecosystems by helping to find behavioral data (such as movement patterns) of various species based on information of topography, land cover, stream density, etc.
 
 #### Reach Analysis
 Reach techniques are commonly used to find the incidence of defined elements *within a certain radius from a chosen node*. All possible routes are modeled. The number of **terminal nodes** varies according to the network structure. Urban walkability indices usually uses reach techniques to assess the intensity of certain indicators (such as intersection density or non-residential land uses) given a walkable radius [@martinoSpatialNetworkAnalysis2020]. In the map below we portray the network reach from a given origin point into the Pacific Spirit Regional Park within 400m (red), 800m (yellow), 1200m (green) and 1600m (blue) radii.
